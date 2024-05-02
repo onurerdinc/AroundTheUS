@@ -1,0 +1,45 @@
+@import url("../vendor/normalize.css");
+@import url("../vendor/fonts.css");
+@import url("../blocks/page.css");
+@import url("../blocks/header.css");
+@import url("../blocks/cards.css");
+@import url("../blocks/profile.css");
+@import url("../blocks/footer.css");
+
+@media screen and (max-width: 320px) {
+  .page__content {
+    padding: 0;
+  }
+  .header {
+    width: 126px;
+    margin: 28px 167px 32px 27px;
+  }
+  .header__title {
+    padding: 0;
+  }
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .profile__description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    width: 100%;
+  }
+
+  .footer {
+    margin-bottom: 36px;
+    margin-right: 19px;
+    margin-left: 19px;
+  }
+}
