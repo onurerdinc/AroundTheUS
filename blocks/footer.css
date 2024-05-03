@@ -11,3 +11,11 @@
   line-height: 21.78px;
   color: #545454;
 }
+
+@media screen and (max-width: 320px) {
+  .footer {
+    margin-bottom: 36px;
+    margin-right: 19px;
+    margin-left: 19px;
+  }
+}

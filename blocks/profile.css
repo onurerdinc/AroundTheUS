@@ -29,6 +29,7 @@
   margin-left: auto;
   cursor: pointer;
   padding: 0;
+  border: 2px;
 }
 
 .profile__add-button:hover {
@@ -43,6 +44,7 @@
   font-weight: 500;
   grid-area: "title";
   margin: 0;
+  font-family: "Inter";
 }
 
 .profile__description {
@@ -51,6 +53,7 @@
   font-weight: 400;
   grid-area: "description";
   margin: 0;
+  font-family: "Inter";
 }
 
 .profile__image {
