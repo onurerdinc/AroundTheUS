@@ -25,10 +25,6 @@
     padding-right: 19px;
     padding-left: 19px;
   }
-
-  .footer {
-    margin-left: 19px;
-  }
 }
 
 @media screen and (max-width: 320px) {
