@@ -16,3 +16,35 @@
   margin: 0 auto;
   position: relative;
 }
+
+@media screen and (max-width: 320px) {
+  .page__content {
+    padding: 0;
+  }
+  .header {
+    width: 126px;
+    margin: 28px 167px 32px 27px;
+  }
+  .header__title {
+    padding: 0;
+  }
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .profile__description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    width: 100%;
+  }
+}

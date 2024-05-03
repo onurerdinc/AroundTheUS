@@ -1,10 +1,32 @@
 .header {
-  margin-top: 45px;
-  max-height: 74px;
-  border-bottom: 1px solid #545454;
+  padding-top: 45px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding-bottom: 41px;
 }
-.header__image {
-  height: 33px;
-  width: 173px;
-  margin-bottom: 41px;
+
+@media screen and (max-width: 620px) {
+  .header {
+    padding: 0 0 32px 27px;
+    box-sizing: border-box;
+    max-height: 56px;
+    padding-top: 28px;
+  }
+
+  .header__image {
+    width: 126px;
+    height: 24px;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .header {
+    box-sizing: border-box;
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+
+  .footer {
+    margin-left: 19px;
+  }
 }
