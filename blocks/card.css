@@ -39,6 +39,7 @@
   overflow: hidden;
   white-space: nowrap;
   max-width: 219px;
+  font-family: "inter";
 }
 
 .card__like-button {

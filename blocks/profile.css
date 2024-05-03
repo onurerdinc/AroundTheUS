@@ -30,11 +30,11 @@
   line-height: 48px;
   font-weight: 500;
   grid-area: title;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
+  font-family: "inter";
 }
 
 .profile__edit-button {
@@ -61,6 +61,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-family: "inter";
 }
 
 .profile__add-button {
