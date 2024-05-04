@@ -79,7 +79,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  profile {
+  .profile {
     flex-direction: column;
     justify-content: center;
   }
