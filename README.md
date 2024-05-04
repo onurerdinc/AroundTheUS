@@ -8,7 +8,7 @@
 
 **Intro**
 
-![Around the world](./images/Around%20the%20Us.png)
+<img src="./images/Around%20the%20Us.png" width="100" height="200">
 
 This project is made so all the elements are displayed correctly on popular screen sizes. In this project, html and css are used, while advanced git and bash techniques was implemented. The web site design is taken from the below Figma link.
 
