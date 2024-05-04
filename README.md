@@ -18,12 +18,7 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Images**
 
-<<<<<<< HEAD
 **Card Images**
-=======
-**_Card Images_**
-[Bald Mountains](./images/bald-mountains.jpg)
->>>>>>> c95447499a6c62ce5542f347deb122f8acbc6a56
 
 [Bald Mountains](./images/bald-mountains.jpg)
 [Lago](./images/lago.jpg)
@@ -33,9 +28,11 @@ This project is made so all the elements are displayed correctly on popular scre
 [Yosemite](./images/yosemite.jpg)
 
 **Avatar Image**
+
 [Avatar](./images/Avatar.png)
 
 **Logos - Buttons - Icons (svg)**
+
 [Around the US logo](./images/logo.svg)
 [Profile edit button](./images/Edit%20Button.svg)
 [Profile add button](./images/Add%20Button.svg)
