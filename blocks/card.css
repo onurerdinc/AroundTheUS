@@ -39,7 +39,7 @@
   overflow: hidden;
   white-space: nowrap;
   max-width: 219px;
-  font-family: "inter";
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .card__like-button {

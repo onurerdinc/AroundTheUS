@@ -34,7 +34,7 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
-  font-family: "inter";
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .profile__edit-button {
@@ -61,7 +61,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: "inter";
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .profile__add-button {
@@ -97,6 +97,7 @@
   .profile__add-button {
     margin: 0;
     width: 100%;
+    border-style: solid;
   }
 }
 
@@ -149,6 +150,7 @@
     margin-right: 0;
   }
 }
+
 @media screen and (max-width: 890px) {
   .profile {
     padding-left: 19px;
