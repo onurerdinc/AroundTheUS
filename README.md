@@ -8,6 +8,8 @@
 
 **Intro**
 
+![Around the world](./images/Around%20the%20world.png)
+
 This project is made so all the elements are displayed correctly on popular screen sizes. In this project, html and css are used, while advanced git and bash techniques was implemented. The web site design is taken from the below Figma link.
 
 **Figma**
@@ -16,13 +18,20 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Images**
 
-**_Card Images_**
-![Bald Mountains](./images/bald-mountains.jpg)
+**Card Images**
 
-**_Avatar Images_**
+[Bald Mountains](./images/bald-mountains.jpg)
+[Lago](./images/lago.jpg)
+[Lake Louise](./images/lake-louise.jpg)
+[Latemar](./images/latemar.jpg)
+[Vanoise](./images/vanoise.jpg)
+[Yosemite](./images/yosemite.jpg)
 
-**_Logos - Buttons - Icons (svg)_**
+**Avatar Image**
+[Avatar](./images/Avatar.png)
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
-
-Good luck and have fun!
+**Logos - Buttons - Icons (svg)**
+[Around the US logo](./images/logo.svg)
+[Profile edit button](./images/Edit%20Button.svg)
+[Profile add button](./images/Add%20Button.svg)
+[Like button](./images/like%20button.svg)
