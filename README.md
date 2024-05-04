@@ -18,7 +18,12 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Images**
 
+<<<<<<< HEAD
 **Card Images**
+=======
+**_Card Images_**
+[Bald Mountains](./images/bald-mountains.jpg)
+>>>>>>> c95447499a6c62ce5542f347deb122f8acbc6a56
 
 [Bald Mountains](./images/bald-mountains.jpg)
 [Lago](./images/lago.jpg)
