@@ -20,20 +20,20 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Card Images**
 
-[Bald Mountains](./images/bald-mountains.jpg)
-[Lago](./images/lago.jpg)
-[Lake Louise](./images/lake-louise.jpg)
-[Latemar](./images/latemar.jpg)
-[Vanoise](./images/vanoise.jpg)
-[Yosemite](./images/yosemite.jpg)
+- [Bald Mountains](./images/bald-mountains.jpg)
+- [Lago](./images/lago.jpg)
+- [Lake Louise](./images/lake-louise.jpg)
+- [Latemar](./images/latemar.jpg)
+- [Vanoise](./images/vanoise.jpg)
+- [Yosemite](./images/yosemite.jpg)
 
 **Avatar Image**
 
-[Avatar](./images/Avatar.png)
+- [Avatar](./images/Avatar.png)
 
 **Logos - Buttons - Icons (svg)**
 
-[Around the US logo](./images/logo.svg)
-[Profile edit button](./images/Edit%20Button.svg)
-[Profile add button](./images/Add%20Button.svg)
-[Like button](./images/like%20button.svg)
+- [Around the US logo](./images/logo.svg)
+- [Profile edit button](./images/Edit%20Button.svg)
+- [Profile add button](./images/Add%20Button.svg)
+- [Like button](./images/like%20button.svg)
