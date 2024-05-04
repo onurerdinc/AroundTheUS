@@ -38,4 +38,4 @@ This project is made so all the elements are displayed correctly on popular scre
 - [Profile add button](./images/Add%20Button.svg)
 - [Like button](./images/like%20button.svg)
 
-- [Video Link]url(https://drive.google.com/file/d/18wc8scmqk2Hvr4IsI1gdjfjUY3xi4LW5/view?usp=drive_link)
+- [Video Presentation Link](https://drive.google.com/file/d/18wc8scmqk2Hvr4IsI1gdjfjUY3xi4LW5/view?usp=drive_link)
