@@ -24,7 +24,6 @@
 
   .page__content {
     padding: 0;
-    max-width: calc(100% - 10px);
   }
 }
 
