@@ -18,6 +18,10 @@
 }
 
 @media screen and (max-width: 320px) {
+  .page {
+    margin: 0;
+  }
+
   .page__content {
     padding: 0;
     max-width: calc(100% - 10px);
