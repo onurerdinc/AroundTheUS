@@ -20,12 +20,12 @@
 @media screen and (max-width: 320px) {
   .page__content {
     padding: 0;
-    overflow-x: hidden;
+    max-width: calc(100% - 10px);
   }
 }
 
 @media screen and (max-width: 820px) {
   .page__content {
-    overflow-x: hidden;
+    max-width: 820px;
   }
 }
