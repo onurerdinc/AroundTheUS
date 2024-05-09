@@ -1,0 +1,129 @@
+.modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  padding-left: 19px;
+  padding-right: 19px;
+  display: none;
+}
+
+.modal_opened {
+  display: flex;
+}
+
+.modal__heading {
+  font-weight: 900;
+  font-size: 24px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  margin: 0 0 50px 0;
+  color: #000;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: black;
+  border: transparent;
+  border-bottom: rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid black;
+  margin: 0 0 30px 0;
+  width: 100%;
+}
+
+.modal__button {
+  background-color: black;
+  color: #fff;
+  height: 51px;
+  border-radius: 2px;
+  border: none;
+  margin-top: 20px;
+}
+
+.modal__container {
+  background-color: #fff;
+  margin: auto;
+  padding: 36px;
+  max-width: 430px;
+  max-height: 330px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 360px;
+  width: 100%;
+}
+
+.modal__close {
+  background-image: url(../images/Close\ Icon.svg);
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 820px) {
+  .modal__container {
+    max-width: 246px;
+    width: 100%;
+  }
+
+  .modal__form {
+    max-width: 238px;
+    width: 100%;
+  }
+
+  .modal__close {
+    height: 26px;
+    width: 26px;
+    bottom: calc(100% + 20px);
+    left: 90%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .modal__container {
+    max-width: 260px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .modal__form {
+    max-width: 244px;
+    width: 100%;
+    padding: 0 0 15px 5px;
+  }
+
+  .modal__heading {
+    padding: 15px 0 15px 5px;
+    max-width: 238px;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .modal__button {
+    padding-left: 5px;
+  }
+
+  .modal__close {
+    bottom: calc(100% + 30px);
+  }
+}
