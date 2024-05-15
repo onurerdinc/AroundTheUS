@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Around the US</title>
     <link href="./pages/index.css" rel="stylesheet" />
-    <script src="./scripts/index.js"></script>
   </head>
   <body class="page">
     <div class="page__content">
@@ -25,7 +24,11 @@
           />
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
-            <button type="button" class="profile__edit-button"></button>
+            <button
+              type="button"
+              class="profile__edit-button"
+              id="profile-edit-button"
+            ></button>
             <p class="profile__description">Explorer</p>
           </div>
           <button type="button" class="profile__add-button"></button>
@@ -104,9 +107,9 @@
       <footer class="footer page__section">
         <p class="footer__text">© 2022 Around The U.S.</p>
       </footer>
-      <div class="modal">
+      <div class="modal" id="profile-edit-modal">
         <div class="modal__container">
-          <button class="modal__close"></button>
+          <button class="modal__close" id="modal-close-button"></button>
           <p class="modal__heading">Edit Profile</p>
           <form class="modal__form">
             <input
@@ -126,5 +129,6 @@
         </div>
       </div>
     </div>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
