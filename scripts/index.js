@@ -46,6 +46,17 @@ function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
 
+function getCardElement(cardData) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImageElement = cardElement.querySelector(".card__image");
+  const cardTitleElement = cardElement.querySelector(
+    ".card__description-title"
+  );
+
+  cardTitleElement.textContent = cardData.name;
+  cardImageElement.src = cardData.link;
+  return cardElement;
+}
 /* Event Handlers */
 
 function handleProfileEditSubmit(evt) {
@@ -68,13 +79,6 @@ modalCloseButton.addEventListener("click", closePopup);
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach(function (cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageElement = cardElement.querySelector(".card__image");
-  const cardTitleElement = cardElement.querySelector(
-    ".card__description-title"
-  );
-
-  cardTitleElement.textContent = cardData.name;
-  cardImageElement.src = cardData.link;
+  const cardElement = getCardElement(cardData);
   cardListElement.append(cardElement);
 });
