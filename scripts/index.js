@@ -76,6 +76,5 @@ initialCards.forEach(function (cardData) {
 
   cardTitleElement.textContent = cardData.name;
   cardImageElement.src = cardData.link;
-
   cardListElement.append(cardElement);
 });
