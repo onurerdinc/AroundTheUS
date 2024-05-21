@@ -33,14 +33,14 @@
   border-bottom: rgba(0, 0, 0, 0.5);
 }
 
-#profile-title-input {
+.modal__input {
   border: none;
   border-bottom: 1px solid black;
   margin: 0 0 30px 0;
   width: 100%;
 }
 
-#profile-description-input {
+.modal__input:last-of-type {
   border: none;
   border-bottom: 1px solid black;
   margin: 0 0 30px 0;
@@ -55,11 +55,11 @@
   border: none;
   margin-top: 20px;
   cursor: pointer;
+  transition: opacity 0.3s;
 }
 
-.modal__save :hover {
+.modal__save:hover {
   opacity: 80%;
-  transition-delay: 0s;
 }
 
 .modal__container {
