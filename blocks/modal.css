@@ -33,20 +33,33 @@
   border-bottom: rgba(0, 0, 0, 0.5);
 }
 
-input[type="text"] {
+#profile-title-input {
   border: none;
   border-bottom: 1px solid black;
   margin: 0 0 30px 0;
   width: 100%;
 }
 
-.modal__button {
+#profile-description-input {
+  border: none;
+  border-bottom: 1px solid black;
+  margin: 0 0 30px 0;
+  width: 100%;
+}
+
+.modal__save {
   background-color: black;
   color: #fff;
   height: 51px;
   border-radius: 2px;
   border: none;
   margin-top: 20px;
+  cursor: pointer;
+}
+
+.modal__save :hover {
+  opacity: 80%;
+  transition-delay: 0s;
 }
 
 .modal__container {
@@ -73,6 +86,10 @@ input[type="text"] {
   bottom: calc(100% + 5px);
   left: calc(100% + 5px);
   cursor: pointer;
+}
+
+.modal__close:hover {
+  opacity: 60%;
 }
 
 @media screen and (max-width: 820px) {
