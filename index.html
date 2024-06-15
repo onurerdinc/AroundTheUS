@@ -85,7 +85,7 @@
               name="title"
               class="modal__input modal__input_type_title"
               id="profile-title-input"
-              placeholder="title"
+              placeholder="Title"
               required
             />
             <input
@@ -93,10 +93,10 @@
               name="url"
               class="modal__input modal__input_type_url"
               id="profile-description-input"
-              placeholder="Image URL"
+              placeholder="Image link"
               required
             />
-            <button type="submit" class="modal__save">Save</button>
+            <button type="submit" class="modal__save">Create</button>
           </form>
         </div>
       </div>
@@ -111,6 +111,18 @@
         </div>
       </li>
     </template>
+
+    <!--  Modal Image Preview -->
+    <div class="modal modal__preview">
+      <div class="modal__container modal__container_image-preview">
+        <button
+          class="modal__close modal__close_image-preview"
+          id="image-modal-close-button"
+        ></button>
+        <img src="" alt="" class="modal__image-preview" />
+        <p class="modal__image-title">Image Title Here</p>
+      </div>
+    </div>
     <script src="./scripts/index.js" defer></script>
   </body>
 </html>
