@@ -57,7 +57,7 @@ const cardTitleInput = addCardFormElement.querySelector(
 const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
 /* Modal Elements for Image Preview */
-const imageModal = document.querySelector(".modal__preview");
+const imageModal = document.querySelector("#preview-modal");
 const imageModalImage = imageModal.querySelector(".modal__image-preview");
 const imageModalTitle = imageModal.querySelector(".modal__image-title");
 const closeImageModalButton = document.querySelector(
@@ -121,8 +121,8 @@ function handleAddCardEditSubmit(evt) {
   evt.preventDefault();
   const titleValue = cardTitleInput.value;
   const urlValue = cardUrlInput.value;
-
   const cardElement = getCardElement({ name: titleValue, link: urlValue });
+  evt.target.reset();
   cardListElement.prepend(cardElement);
   closePopup(addCardModal);
 }
