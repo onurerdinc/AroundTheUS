@@ -78,9 +78,17 @@ function getCardElement(cardData) {
   // add the event listener to the delete button
   // cardElement.remove() when the delete button is clicked in event listener
 
+  // add click listener to the card image element
+  //open modal with previewImageModal
+
   const likeButton = cardElement.querySelector(".card__like-button");
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
+  });
+
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove();
   });
 
   cardTitleElement.textContent = cardData.name;

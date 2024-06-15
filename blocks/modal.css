@@ -14,6 +14,7 @@
 
 .modal_opened {
   display: flex;
+  transition: opacity 0.5s linear, visibility 0.5s linear;
 }
 
 .modal__heading {
