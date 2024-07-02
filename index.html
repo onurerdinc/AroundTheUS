@@ -45,7 +45,7 @@
         <div class="modal__container">
           <button
             type="button"
-            class="modal__close"
+            class="modal__close popup__button"
             id="modal-close-button"
           ></button>
           <p class="modal__heading">Edit Profile</p>
@@ -53,7 +53,7 @@
             <input
               type="text"
               name="title"
-              class="modal__input"
+              class="popup__input modal__input"
               id="profile-title-input"
               placeholder="Name"
               required
@@ -61,12 +61,14 @@
             <input
               type="text"
               name="subheader"
-              class="modal__input"
+              class="popup__input modal__input"
               id="profile-description-input"
               placeholder="Description"
               required
             />
-            <button type="submit" class="modal__save">Save</button>
+            <button type="submit" class="modal__save popup__button">
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -75,7 +77,7 @@
         <div class="modal__container">
           <button
             type="button"
-            class="modal__close"
+            class="modal__close popup__button"
             id="modal-close-button"
           ></button>
           <p class="modal__heading">New Place</p>
@@ -83,7 +85,7 @@
             <input
               type="text"
               name="title"
-              class="modal__input modal__input_type_title"
+              class="popup__input modal__input modal__input_type_title"
               id="profile-title-input"
               placeholder="Title"
               required
@@ -91,12 +93,14 @@
             <input
               type="text"
               name="url"
-              class="modal__input modal__input_type_url"
+              class="popup__input modal__input modal__input_type_url"
               id="profile-description-input"
               placeholder="Image link"
               required
             />
-            <button type="submit" class="modal__save">Create</button>
+            <button type="submit" class="modal__save popup__button">
+              Create
+            </button>
           </form>
         </div>
       </div>
@@ -107,7 +111,10 @@
         <img src="" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__description-title"></h2>
-          <button type="button" class="card__like-button"></button>
+          <button
+            type="button"
+            class="popup__button card__like-button"
+          ></button>
         </div>
       </li>
     </template>
@@ -116,7 +123,7 @@
     <div class="modal" id="preview-modal">
       <div class="modal__container modal__container_image-preview">
         <button
-          class="modal__close modal__close_image-preview"
+          class="modal__close modal__close_image-preview popup__button"
           id="image-modal-close-button"
         ></button>
         <img src="" alt="" class="modal__image-preview" />
