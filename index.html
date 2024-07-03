@@ -26,7 +26,7 @@
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button
               type="button"
-              class="profile__edit-button"
+              class="profile__edit-button popup__button"
               id="profile-edit-button"
             ></button>
             <p class="profile__description">Explorer</p>
@@ -45,28 +45,40 @@
         <div class="modal__container">
           <button
             type="button"
-            class="modal__close popup__button"
+            class="modal__close"
             id="modal-close-button"
           ></button>
           <p class="modal__heading">Edit Profile</p>
-          <form class="modal__form popup_form">
+          <form class="modal__form">
             <input
               type="text"
               name="title"
-              class="popup__input modal__input"
+              class="modal__input"
               id="profile-title-input"
               placeholder="Name"
+              minlength="2"
+              maxlength="40"
               required
             />
+            <span class="modal__error" id="profile-title-input-error"></span>
             <input
               type="text"
               name="subheader"
-              class="popup__input modal__input"
+              class="modal__input"
               id="profile-description-input"
               placeholder="Description"
+              minlength="2"
+              maxlength="200"
               required
             />
-            <button type="submit" class="modal__save popup__button">
+            <span
+              class="modal__error"
+              id="profile-description-input-error"
+            ></span>
+            <button
+              type="submit"
+              class="modal__save modal__button modal__button_disabled"
+            >
               Save
             </button>
           </form>
@@ -77,28 +89,35 @@
         <div class="modal__container">
           <button
             type="button"
-            class="modal__close popup__button"
+            class="modal__close"
             id="modal-close-button"
           ></button>
           <p class="modal__heading">New Place</p>
-          <form class="add-card-form modal__form popup_form">
+          <form class="add-card-form modal__form">
             <input
               type="text"
               name="title"
-              class="popup__input modal__input modal__input_type_title"
+              class="modal__input modal__input_type_title"
               id="profile-title-input"
               placeholder="Title"
+              minlength="1"
+              maxlength="30"
               required
             />
+            <span class="modal__error" id="profile-title-input-error"></span>
             <input
-              type="text"
+              type="url"
               name="url"
-              class="popup__input modal__input modal__input_type_url"
+              class="modal__input modal__input_type_url"
               id="profile-description-input"
               placeholder="Image link"
               required
             />
-            <button type="submit" class="modal__save popup__button">
+            <span class="modal__error" id="modal__input_type_url-error"></span>
+            <button
+              type="submit"
+              class="modal__save modal__button modal__save-button_disabled"
+            >
               Create
             </button>
           </form>
@@ -111,10 +130,7 @@
         <img src="" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__description-title"></h2>
-          <button
-            type="button"
-            class="popup__button card__like-button"
-          ></button>
+          <button type="button" class="card__like-button"></button>
         </div>
       </li>
     </template>
@@ -123,7 +139,7 @@
     <div class="modal" id="preview-modal">
       <div class="modal__container modal__container_image-preview">
         <button
-          class="modal__close modal__close_image-preview popup__button"
+          class="modal__close modal__close_image-preview"
           id="image-modal-close-button"
         ></button>
         <img src="" alt="" class="modal__image-preview" />
