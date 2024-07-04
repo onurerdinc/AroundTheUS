@@ -68,10 +68,12 @@ const closeImageModalButton = document.querySelector(
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscKey);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscKey);
 }
 
 // Function to handle closing the popup by clicking the overlay
