@@ -74,6 +74,23 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
+// Function to handle closing the popup by clicking the overlay
+function handleOverlayClick(e) {
+  if (e.target.classList.contains("modal_opened")) {
+    closePopup(e.target);
+  }
+}
+
+// Function to handle closing the popup by pressing the Esc key
+function handleEscKey(event) {
+  if (event.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closePopup(openedModal);
+    }
+  }
+}
+
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image");
@@ -147,6 +164,14 @@ addNewCardButton.addEventListener("click", () => openModal(addCardModal));
 addCardModalCloseButton.addEventListener("click", () =>
   closePopup(addCardModal)
 );
+
+// Add overlay click event listener for each modal
+[profileEditModal, addCardModal, imageModal].forEach((modal) => {
+  modal.addEventListener("mousedown", handleOverlayClick);
+});
+
+// Add keydown event listener for the document to handle the Esc key
+document.addEventListener("keydown", handleEscKey);
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
