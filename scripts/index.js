@@ -172,9 +172,6 @@ addCardModalCloseButton.addEventListener("click", () =>
   modal.addEventListener("mousedown", handleOverlayClick);
 });
 
-// Add keydown event listener for the document to handle the Esc key
-document.addEventListener("keydown", handleEscKey);
-
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListElement.append(cardElement);
