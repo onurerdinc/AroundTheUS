@@ -39,11 +39,13 @@ export default class Card {
   }
 
   _handleImageClick() {
-    this._previewImageModal.querySelector(".preview-image-card").src =
-      this._link;
-    this._previewImageModal.querySelector(".preview-image-card").alt =
-      this._name;
-    this._previewImageModal.querySelector(".preview-image-title").textContent =
+    this._previewImageModal.querySelector(
+      ".modal__container_image-preview"
+    ).src = this._link;
+    this._previewImageModal.querySelector(
+      ".modal__container_image-preview"
+    ).alt = this._name;
+    this._previewImageModal.querySelector(".modal__image-title").textContent =
       this._name;
   }
 
