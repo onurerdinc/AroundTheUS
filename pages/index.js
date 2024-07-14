@@ -1,5 +1,5 @@
-import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
 
 const initialCards = [
   {
@@ -66,6 +66,16 @@ const imageModalTitle = imageModal.querySelector(".modal__image-title");
 const closeImageModalButton = document.querySelector(
   "#image-modal-close-button"
 );
+
+/* Validation */
+const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
 
 /* Functions */
 
