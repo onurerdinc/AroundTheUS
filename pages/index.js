@@ -77,6 +77,13 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
+/* Instantiate FormValidator for both Card and Profile forms and enable validation */
+const profileFormValidator = new FormValidator(config, profileEditForm);
+const addCardFormValidator = new FormValidator(config, addCardFormElement);
+
+profileFormValidator.enableValidation();
+addCardFormValidator.enableValidation();
+
 /* Functions */
 
 function closePopup(modal) {
