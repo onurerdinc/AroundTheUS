@@ -157,6 +157,7 @@ function createCard(cardData) {
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+  profileFormValidator.resetValidation();
   openModal(profileEditModal);
 });
 
@@ -179,8 +180,6 @@ addCardModalCloseButton.addEventListener("click", () =>
 });
 
 initialCards.forEach((cardData) => {
-  //new line
-  const card = new Card(cardData, cardTemplate, handleImageClick);
-  const cardElement = card.getView();
+  const cardElement = createCard(cardData);
   cardListElement.append(cardElement);
 });
