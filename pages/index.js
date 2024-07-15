@@ -97,6 +97,7 @@ function openModal(modal) {
 }
 
 // Function to handle closing the popup by clicking the overlay
+
 function handleOverlayClick(e) {
   if (e.target.classList.contains("modal_opened")) {
     closePopup(e.target);
@@ -113,41 +114,17 @@ function handleEscKey(event) {
   }
 }
 
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageElement = cardElement.querySelector(".card__image");
-  const cardTitleElement = cardElement.querySelector(
-    ".card__description-title"
-  );
-
-  cardTitleElement.textContent = cardData.name;
-  cardImageElement.src = cardData.link;
-  cardImageElement.alt = `Photo of ${cardData.name}`;
-
-  cardImageElement.addEventListener("click", () => {
-    imageModalImage.src = cardData.link;
-    imageModalImage.alt = cardData.name;
-    imageModalTitle.textContent = cardData.name;
-    openModal(imageModal);
-  });
-
-  const likeButton = cardElement.querySelector(".card__like-button");
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  return cardElement;
-}
-
 // Close event for image preview modal
 closeImageModalButton.addEventListener("click", () => closePopup(imageModal));
 
 /* Event Handlers */
+
+function handleImageClick(name, link) {
+  imageModalImage.src = link;
+  imageModalImage.alt = name;
+  imageModalTitle.textContent = name;
+  openModal(imageModal);
+}
 
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
@@ -160,10 +137,19 @@ function handleAddCardEditSubmit(evt) {
   evt.preventDefault();
   const titleValue = cardTitleInput.value;
   const urlValue = cardUrlInput.value;
-  const cardElement = getCardElement({ name: titleValue, link: urlValue });
+  const cardData = { name: titleValue, link: urlValue };
+  const cardElement = createCard(cardData);
   evt.target.reset();
   cardListElement.prepend(cardElement);
   closePopup(addCardModal);
+  addCardFormValidator.toggleButtonState();
+}
+
+function createCard(cardData) {
+  console.log("Creating card:", cardData);
+  const card = new Card(cardData, cardTemplate, handleImageClick);
+  console.log("Card element:", card.getView());
+  return card.getView();
 }
 
 /* Event Listeners */
@@ -193,6 +179,8 @@ addCardModalCloseButton.addEventListener("click", () =>
 });
 
 initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
+  //new line
+  const card = new Card(cardData, cardTemplate, handleImageClick);
+  const cardElement = card.getView();
   cardListElement.append(cardElement);
 });

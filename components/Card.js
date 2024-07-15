@@ -1,8 +1,8 @@
 export default class Card {
-  constructor({ name, link }, cardSelector, handleImageClick) {
+  constructor({ name, link }, cardTemplate, handleImageClick) {
     this._name = name;
     this._link = link;
-    this._cardSelector = cardSelector;
+    this._cardTemplate = cardTemplate;
     this._handleImageClick = handleImageClick;
   }
 
@@ -23,7 +23,7 @@ export default class Card {
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {
-        this._handleImageClick();
+        this._handleImageClick(this._name, this._link);
       });
   }
 
@@ -50,17 +50,15 @@ export default class Card {
   }
 
   getView() {
-    this._cardElement = document
-      .querySelector(this._cardSelector)
-      .content.querySelector(".card")
-      .cloneNode(true);
-    // get the card view
+    const template = this._cardTemplate.cloneNode(true);
+    this._cardElement = template;
+
     this._cardElement.querySelector(".card__image").src = this._link;
     this._cardElement.querySelector(".card__image").alt = this._name;
-    this._cardElement.querySelector(".card__title").textContent = this._name;
-    // set event listeners
+    this._cardElement.querySelector(".card-title").textContent = this._name;
+
     this._setEventListeners();
-    // return the card
+
     return this._cardElement;
   }
 }
