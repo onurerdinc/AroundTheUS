@@ -1,47 +1,51 @@
 export default class Card {
-  constructor({ name, link }, cardTemplate, handleImageClick) {
-    this._name = name;
-    this._link = link;
-    this._cardTemplate = cardTemplate;
+  constructor({ name, link }, cardSelector, handleImageClick) {
+    this.name = name;
+    this.link = link;
+    this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
+    this._previewImageElement = null;
   }
 
   _setEventListeners() {
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
     this._likeButton.addEventListener("click", () => {
-      this._toggleLike();
+      this._handleLikeIcon();
     });
-    this._deleteButton.addEventListener("click", () => {
-      this._deleteCard();
-    });
-    this._imageElement.addEventListener("click", () => {
-      this._handleImageClick(this._name, this._link);
+
+    this._deleteButton = this._cardElement
+      .querySelector(".card__delete-button")
+      .addEventListener("click", () => {
+        this._handleDeleteCard();
+      });
+
+    this._cardImageElement = this._cardElement.querySelector(".card__image");
+    this._cardImageElement.addEventListener("click", () => {
+      this._handleImageClick(this);
     });
   }
 
-  _toggleLike() {
-    this._likeButton.classList.toggle("card__like-button_active");
-  }
-
-  _deleteCard() {
+  _handleDeleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
   }
 
+  _handleLikeIcon() {
+    this._likeButton.classList.toggle("card__like-button_active");
+  }
+
   getView() {
-    const template = this._cardTemplate.cloneNode(true);
-    this._cardElement = template;
-
-    this._likeButton = this._cardElement.querySelector(".card__like-button");
-    this._deleteButton = this._cardElement.querySelector(
-      ".card__delete-button"
-    );
-    this._imageElement = this._cardElement.querySelector(".card__image");
-
-    this._imageElement.src = this._link;
-    this._imageElement.alt = this._name;
-    this._cardElement.querySelector(".card-title").textContent = this._name;
+    this._cardElement = document
+      .querySelector("#card-template")
+      .content.querySelector(".card")
+      .cloneNode(true);
 
     this._setEventListeners();
+
+    this._cardTitleElement = this._cardElement.querySelector(".card-title");
+    this._cardImageElement.src = this.link;
+    this._cardImageElement.alt = this.name;
+    this._cardTitleElement.textContent = this.name;
 
     return this._cardElement;
   }
