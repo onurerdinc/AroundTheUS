@@ -10,15 +10,15 @@ import UserInfo from "../components/UserInfo.js";
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
-//Templates
-const cardListElement = document.querySelector(".cards__list");
 
 //Edit Profile
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const profileEditBtn = document.querySelector("#profile-edit-button");
-const profileTitleInput = document.querySelector("#profile-title-input");
-const profileDescriptionInput = document.querySelector(
+const profileTitleInput = profileEditModal.querySelector(
+  "#profile-title-input"
+);
+const profileDescriptionInput = profileEditModal.querySelector(
   "#profile-description-input"
 );
 
@@ -26,6 +26,7 @@ const profileDescriptionInput = document.querySelector(
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = addCardModal.querySelector(".modal__form");
 const addCardBtn = document.querySelector(".profile__add-button");
+
 const renderCard = (cardData) => {
   const card = createCard(cardData);
   section.addItem(card);
