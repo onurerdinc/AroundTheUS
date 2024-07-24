@@ -71,14 +71,14 @@ function handleImageClick(name, link) {
 }
 
 function handleProfileEditSubmit(profileData) {
-  const name = profileData.name;
-  const description = profileData.description;
-  user.setUserInfo({ name, description });
+  const name = profileData.title;
+  const description = profileData.subheader;
+  user.setUserInfo(name, description);
   editProfilePopup.close();
 }
 
 function handleAddCardSubmit(newCardData, cardListElement) {
-  const name = newCardData.title;
+  const name = newCardData.name;
   const alt = newCardData.title;
   const link = newCardData.url;
   section.addItem(createCard({ name, alt, link }));
