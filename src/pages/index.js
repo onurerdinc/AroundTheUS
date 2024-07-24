@@ -78,7 +78,7 @@ function handleProfileEditSubmit(profileData) {
 }
 
 function handleAddCardSubmit(newCardData, cardListElement) {
-  const name = newCardData.name;
+  const name = newCardData.title;
   const alt = newCardData.title;
   const link = newCardData.url;
   section.addItem(createCard({ name, alt, link }));
