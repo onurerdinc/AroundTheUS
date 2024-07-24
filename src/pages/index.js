@@ -96,7 +96,7 @@ function createCard(cardData) {
 profileEditBtn.addEventListener("click", () => {
   const userInput = user.getUserInfo();
   profileTitleInput.value = userInput.name;
-  profileDescriptionInput.value = userInput.description;
+  profileDescriptionInput.value = userInput.about;
   editProfilePopup.open();
 });
 
