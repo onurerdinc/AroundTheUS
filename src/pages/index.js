@@ -13,7 +13,7 @@ import UserInfo from "../components/UserInfo.js";
 
 //Edit Profile
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const profileEditForm = document.forms["profile-form"];
 const profileEditBtn = document.querySelector("#profile-edit-button");
 const profileTitleInput = profileEditModal.querySelector(
   "#profile-title-input"
@@ -24,7 +24,7 @@ const profileDescriptionInput = profileEditModal.querySelector(
 
 //Add New Card
 const addCardModal = document.querySelector("#add-card-modal");
-const addCardForm = addCardModal.querySelector(".modal__form");
+const addCardForm = document.forms["card-form"];
 const addCardBtn = document.querySelector(".profile__add-button");
 
 const renderCard = (cardData) => {
@@ -81,7 +81,7 @@ function handleAddCardSubmit(newCardData, cardListElement) {
   const name = newCardData.title;
   const alt = newCardData.title;
   const link = newCardData.url;
-  section.addItem(createCard({ name, alt, link }));
+  renderCard({ name, alt, link });
   newCardPopup.close();
   addCardFormValidator.resetForm();
 }
@@ -95,8 +95,10 @@ function createCard(cardData) {
 //Edit Profile Form
 profileEditBtn.addEventListener("click", () => {
   const userInput = user.getUserInfo();
-  profileTitleInput.value = userInput.name;
-  profileDescriptionInput.value = userInput.about;
+  editProfilePopup.setInputValues({
+    title: userInput.name,
+    subheader: userInput.about,
+  });
   editProfilePopup.open();
 });
 
