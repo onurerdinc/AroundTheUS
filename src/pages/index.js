@@ -83,7 +83,6 @@ function handleAddCardSubmit(newCardData, cardListElement) {
   const link = newCardData.url;
   renderCard({ name, alt, link });
   newCardPopup.close();
-  addCardFormValidator.resetValidation();
 }
 
 function createCard(cardData) {
