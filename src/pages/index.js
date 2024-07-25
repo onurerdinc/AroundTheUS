@@ -98,6 +98,7 @@ profileEditBtn.addEventListener("click", () => {
     title: userInput.name,
     subheader: userInput.about,
   });
+  profileEditFormValidator.resetValidation();
   editProfilePopup.open();
 });
 
