@@ -6,10 +6,19 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
+import Api from "../components/api.js";
 
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "14397dd8-886c-41ac-9747-72b21d4fd4c0",
+    "Content-Type": "application/json",
+  },
+});
 
 //Edit Profile
 const profileEditModal = document.querySelector("#profile-edit-modal");

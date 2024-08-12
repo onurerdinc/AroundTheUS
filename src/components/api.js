@@ -4,29 +4,36 @@ export default class Api {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
-  async getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
-      method: "GET",
-      headers: {
-        authorization: "14397dd8-886c-41ac-9747-72b21d4fd4c0",
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        console.log("Error");
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .then((result) => {
-        console.log(result);
-        return result;
-      })
-      .catch((err) => console.error(err));
-  }
-  getInitialCards() {
-    // ...
+
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
   }
 
-  // other methods for working with the API
+  getUserData() {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: "GET",
+      headers: this._headers,
+    }).then(this._checkResponse);
+  }
+
+  editProfile(name, about) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: "PATCH",
+      headers: { ...this._headers },
+      body: JSON.stringify({
+        name: name,
+        about: about,
+      }),
+    }).then(this._checkResponse);
+  }
+
+  getInitialCards() {
+    return fetch(`${this._baseUrl}/cards`, {
+      method: "GET",
+      headers: this._headers,
+    }).then(this._checkResponse);
+  }
 }
