@@ -39,4 +39,4 @@ This project is made so all the elements are displayed correctly on popular scre
 - [Like button](./images/like%20button.svg)
 
 
-- [Website Link](https://onurerdinc.github.io/se_project_aroundtheus/)
+- [Website Link](https://onurerdinc.github.io/AroundTheUs/)
