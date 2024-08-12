@@ -14,29 +14,4 @@ This project is made so all the elements are displayed correctly on popular scre
 
 - [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
 
-**Images**
-
-![Around the world](./images/Around%20the%20Us.png)
-
-**Card Images**
-
-- [Bald Mountains](./images/bald-mountains.jpg)
-- [Lago](./images/lago.jpg)
-- [Lake Louise](./images/lake-louise.jpg)
-- [Latemar](./images/latemar.jpg)
-- [Vanoise](./images/vanoise.jpg)
-- [Yosemite](./images/yosemite.jpg)
-
-**Avatar Image**
-
-- [Avatar](./images/Avatar.png)
-
-**Logos - Buttons - Icons (svg)**
-
-- [Around the US logo](./images/logo.svg)
-- [Profile edit button](./images/Edit%20Button.svg)
-- [Profile add button](./images/Add%20Button.svg)
-- [Like button](./images/like%20button.svg)
-
-
 - [Website Link](https://onurerdinc.github.io/AroundTheUs/)
