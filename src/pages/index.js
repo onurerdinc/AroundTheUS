@@ -61,7 +61,7 @@ const editProfilePopup = new PopupWithForm(
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        submitButton.textContent = initialButtonText; // Revert button text back to original
+        submitButton.textContent = initialButtonText;
       });
   }
 );
@@ -69,10 +69,10 @@ editProfilePopup.setEventListeners();
 
 // Add New Card Popup
 const newCardPopup = new PopupWithForm("#add-card-modal", (newCardData) => {
-  const submitButton = addCardForm.querySelector(".modal__save"); // Get the submit button
-  const initialButtonText = submitButton.textContent; // Store the initial button text
+  const submitButton = addCardForm.querySelector(".modal__save");
+  const initialButtonText = submitButton.textContent;
 
-  submitButton.textContent = "Saving..."; // Change button text to 'Saving...'
+  submitButton.textContent = "Saving...";
   api
     .addNewCard({ name: newCardData.title, link: newCardData.url })
     .then((cardData) => {
@@ -81,7 +81,7 @@ const newCardPopup = new PopupWithForm("#add-card-modal", (newCardData) => {
     })
     .catch((err) => console.log(err));
 }).finally(() => {
-  submitButton.textContent = initialButtonText; // Revert button text back to original
+  submitButton.textContent = initialButtonText;
 });
 newCardPopup.setEventListeners();
 
@@ -105,21 +105,19 @@ function renderCard(cardData) {
   const card = new Card(cardData, "#card-template", handleImageClick);
   const cardElement = card.getView();
 
-  // Add functionality for liking/unliking the card
   card.setLikeHandler((cardId) => {
-    // <-- Added: Handler for like/unlike
     if (card.isLiked()) {
       api
-        .removeLikes(cardId) // <-- Added: API call to remove like
+        .removeLikes(cardId)
         .then((updatedCardData) => {
-          card.updateLikes(updatedCardData.likes); // <-- Modified: Update UI with server response
+          card.updateLikes(updatedCardData.likes);
         })
         .catch((err) => console.log(err));
     } else {
       api
-        .addLikes(cardId) // <-- Added: API call to add like
+        .addLikes(cardId)
         .then((updatedCardData) => {
-          card.updateLikes(updatedCardData.likes); // <-- Modified: Update UI with server response
+          card.updateLikes(updatedCardData.likes);
         })
         .catch((err) => console.log(err));
     }
@@ -167,9 +165,9 @@ const profileEditFormValidator = new FormValidator(config, profileEditForm);
 profileEditFormValidator.enableValidation();
 
 // Fetch user data and initial cards on page load
-Promise.all([api.getUserData(), api.getInitialCards()]) // <-- Added: Fetch user data and cards from API
+Promise.all([api.getUserData(), api.getInitialCards()])
   .then(([userData, initialCards]) => {
-    user.setUserInfo(userData.name, userData.about); // <-- Modified: Update UI with fetched user data
-    section.renderItems(initialCards); // <-- Modified: Render fetched cards
+    user.setUserInfo(userData.name, userData.about);
+    section.renderItems(initialCards);
   })
   .catch((err) => console.log(err));
