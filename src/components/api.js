@@ -38,10 +38,17 @@ export default class Api {
   }
 
   addNewCard({ name, link }) {
-    return fetch(`${this._baseUrl}/card`, {
+    return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({ name, link }),
+    }).then(this._checkResponse);
+  }
+
+  deleteCard(cardId) {
+    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
     }).then(this._checkResponse);
   }
 

@@ -1,5 +1,5 @@
 import "../pages/index.css";
-import { initialCards, config } from "../Utility/Constant.js";
+import { initialCards, config } from "../utils/constants.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -14,7 +14,7 @@ import Api from "../components/api.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "14397dd8-886c-41ac-9747-72b21d4fd4c0",
+    authorization: "b0098997-bd6d-4f63-a45b-e2993927f642",
     "Content-Type": "application/json",
   },
 });
@@ -79,9 +79,10 @@ const newCardPopup = new PopupWithForm("#add-card-modal", (newCardData) => {
       renderCard(cardData);
       newCardPopup.close();
     })
-    .catch((err) => console.log(err));
-}).finally(() => {
-  submitButton.textContent = initialButtonText;
+    .catch((err) => console.log(err))
+    .finally(() => {
+      submitButton.textContent = initialButtonText;
+    });
 });
 newCardPopup.setEventListeners();
 
@@ -92,7 +93,7 @@ previewImagePopup.setEventListeners();
 // Section to render cards
 const section = new Section(
   {
-    items: [],
+    items: initialCards,
     renderer: renderCard,
   },
   ".cards__list"
@@ -163,11 +164,3 @@ const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();
 const profileEditFormValidator = new FormValidator(config, profileEditForm);
 profileEditFormValidator.enableValidation();
-
-// Fetch user data and initial cards on page load
-Promise.all([api.getUserData(), api.getInitialCards()])
-  .then(([userData, initialCards]) => {
-    user.setUserInfo(userData.name, userData.about);
-    section.renderItems(initialCards);
-  })
-  .catch((err) => console.log(err));
