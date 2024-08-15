@@ -167,6 +167,11 @@
   color: #000;
 }
 
+#modal-delete-card-container {
+  width: 430px;
+  height: 181px;
+}
+
 @media screen and (max-width: 820px) {
   .modal__container {
     max-width: 246px;
