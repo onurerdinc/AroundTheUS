@@ -1,6 +1,5 @@
 export default class Api {
-  constructor(baseUrl, headers) {
-    // constructor body
+  constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
@@ -21,7 +20,6 @@ export default class Api {
 
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
-      method: "GET",
       headers: this._headers,
     }).then(this._checkResponse);
   }

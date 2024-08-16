@@ -1,5 +1,5 @@
 import "../pages/index.css";
-import { initialCards, config } from "../utils/constants.js";
+import { config, initialCards } from "../utils/constants.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -14,7 +14,7 @@ import Api from "../components/api.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "b0098997-bd6d-4f63-a45b-e2993927f642",
+    authorization: "128649a3-288e-4d03-932e-695fc20e4348",
     "Content-Type": "application/json",
   },
 });
@@ -35,7 +35,6 @@ const profileDescriptionInput = profileEditModal.querySelector(
 );
 
 //Add New Card
-const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = document.forms["card-form"];
 const addCardBtn = document.querySelector(".profile__add-button");
 
@@ -43,9 +42,10 @@ const addCardBtn = document.querySelector(".profile__add-button");
 const user = new UserInfo(".profile__title", ".profile__description");
 
 // /* -------------------------------------------------------------------------- */
-// /*                                  Popups                                    */
+/*                                  Popups                                    */
 // /* -------------------------------------------------------------------------- */
 
+// Edit Profile Popup
 const editProfilePopup = new PopupWithForm(
   "#profile-edit-modal",
   (profileData) => {
@@ -98,9 +98,21 @@ const section = new Section(
   },
   ".cards__list"
 );
+
+/* -------------------------------------------------------------------------- */
+/*                                  Functions                                 */
 // /* -------------------------------------------------------------------------- */
-// /*                                  Functions                                 */
-// /* -------------------------------------------------------------------------- */
+
+// Fetch and render initial cards
+api
+  .getInitialCards()
+  .then((cards) => {
+    console.log(cards);
+    section._items = cards;
+    section.renderItems();
+  })
+  .catch((err) => console.log("Error fetching cards:", err));
+
 // Render card function
 function renderCard(cardData) {
   const card = new Card(cardData, "#card-template", handleImageClick);
@@ -131,18 +143,18 @@ function renderCard(cardData) {
 function handleImageClick(name, link) {
   previewImagePopup.open(name, link);
 }
+
 // /* -------------------------------------------------------------------------- */
-// /*                               Event Listeners                              */
+/*                               Event Listeners                              */
 // /* -------------------------------------------------------------------------- */
+
 //Edit Profile Form
 profileEditBtn.addEventListener("click", () => {
   const userInput = user.getUserInfo();
-  editProfilePopup.setInputValues({
-    title: userInput.name,
-    subheader: userInput.about,
-  });
-  profileEditFormValidator.resetValidation();
+  profileTitleInput.value = userInput.name;
+  profileDescriptionInput.value = userInput.description;
   editProfilePopup.open();
+  profileEditFormValidator.resetValidation();
 });
 
 //New Card Form
@@ -158,7 +170,7 @@ const confirmation = new PopupDelete({
 confirmation.setEventListeners();
 
 // /* -------------------------------------------------------------------------- */
-// /*                               Validation                                 */
+/*                               Validation                                 */
 // /* -------------------------------------------------------------------------- */
 const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();
