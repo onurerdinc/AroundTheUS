@@ -103,7 +103,7 @@ const section = new Section(
 /*                                  Functions                                 */
 // /* -------------------------------------------------------------------------- */
 
-// Fetch and render initial cards
+// Render initial cards
 api
   .getInitialCards()
   .then((cards) => {
