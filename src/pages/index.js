@@ -93,7 +93,7 @@ previewImagePopup.setEventListeners();
 // Section to render cards
 const section = new Section(
   {
-    items: initialCards,
+    items: [],
     renderer: renderCard,
   },
   ".cards__list"
