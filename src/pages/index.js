@@ -116,8 +116,6 @@ const section = new Section(
   ".cards__list"
 );
 
-console.log("Starting to fetch initial cards...");
-
 api
   .getInitialCards()
   .then((cards) => {
