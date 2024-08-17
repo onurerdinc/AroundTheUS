@@ -49,11 +49,11 @@ api
   .getUserData()
   .then((profileData) => {
     if (profileData) {
-      userInfo.setUserInfo({
+      user.setUserInfo({
         name: profileData.name,
         about: profileData.about,
       });
-      userInfo.changeAvatar(profileData.avatar);
+      user.changeAvatar(profileData.avatar);
     }
   })
   .catch((err) => console.log("Error loading user info:", err));
@@ -116,6 +116,8 @@ const section = new Section(
   ".cards__list"
 );
 
+console.log("Starting to fetch initial cards...");
+
 api
   .getInitialCards()
   .then((cards) => {
@@ -131,8 +133,6 @@ api
 function renderCard(cardData) {
   const card = new Card(cardData, "#card-template", handleImageClick);
   const cardElement = card.getView();
-
-  // Directly use the card's methods for like and delete actions
   section.addItem(cardElement);
 }
 
