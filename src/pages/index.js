@@ -110,7 +110,7 @@ previewImagePopup.setEventListeners();
 // Section to render cards
 const section = new Section(
   {
-    items: initialCards, // Use the initialCards array here
+    items: [],
     renderer: renderCard,
   },
   ".cards__list"
@@ -119,7 +119,7 @@ const section = new Section(
 api
   .getInitialCards()
   .then((cards) => {
-    section.renderItems(cards); // Render the fetched cards
+    section.renderItems(cards);
   })
   .catch((err) => console.log("Error fetching cards:", err));
 
