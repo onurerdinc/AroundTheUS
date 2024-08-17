@@ -1,5 +1,5 @@
 import "../pages/index.css";
-import { config, initialCards } from "../utils/constants.js";
+import { config } from "../utils/constants.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -39,7 +39,24 @@ const addCardForm = document.forms["card-form"];
 const addCardBtn = document.querySelector(".profile__add-button");
 
 // UserInfo
-const user = new UserInfo(".profile__title", ".profile__description");
+const user = new UserInfo({
+  nameSelector: ".profile__title",
+  aboutSelector: ".profile__description",
+  avatarSelector: ".profile__image",
+});
+
+api
+  .getUserData()
+  .then((profileData) => {
+    if (profileData) {
+      userInfo.setUserInfo({
+        name: profileData.name,
+        about: profileData.about,
+      });
+      userInfo.changeAvatar(profileData.avatar);
+    }
+  })
+  .catch((err) => console.log("Error loading user info:", err));
 
 /* -------------------------------------------------------------------------- */
 /*                                  Popups                                    */
@@ -71,8 +88,8 @@ editProfilePopup.setEventListeners();
 const newCardPopup = new PopupWithForm("#add-card-modal", (newCardData) => {
   const submitButton = addCardForm.querySelector(".modal__save");
   const initialButtonText = submitButton.textContent;
-  submitButton.textContent = "Saving...";
 
+  submitButton.textContent = "Saving...";
   api
     .addNewCard({ name: newCardData.title, link: newCardData.url })
     .then((cardData) => {
@@ -93,20 +110,22 @@ previewImagePopup.setEventListeners();
 // Section to render cards
 const section = new Section(
   {
-    items: [],
+    items: initialCards, // Use the initialCards array here
     renderer: renderCard,
   },
   ".cards__list"
 );
 
+api
+  .getInitialCards()
+  .then((cards) => {
+    section.renderItems(cards); // Render the fetched cards
+  })
+  .catch((err) => console.log("Error fetching cards:", err));
+
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
-
-// Render initial cards from initialCards array
-initialCards.forEach((cardData) => {
-  renderCard(cardData);
-});
 
 // Render card function
 function renderCard(cardData) {
