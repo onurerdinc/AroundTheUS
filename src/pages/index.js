@@ -39,20 +39,17 @@ const addCardForm = document.forms["card-form"];
 const addCardBtn = document.querySelector(".profile__add-button");
 
 // UserInfo
-const user = new UserInfo({
-  nameSelector: ".profile__title",
-  aboutSelector: ".profile__description",
-  avatarSelector: ".profile__image",
-});
+const user = new UserInfo(
+  ".profile__title",
+  ".profile__description",
+  ".profile__image"
+);
 
 api
   .getUserData()
   .then((profileData) => {
     if (profileData) {
-      user.setUserInfo({
-        name: profileData.name,
-        about: profileData.about,
-      });
+      user.setUserInfo(profileData.name, profileData.about);
       user.changeAvatar(profileData.avatar);
     }
   })
@@ -119,6 +116,7 @@ const section = new Section(
 api
   .getInitialCards()
   .then((cards) => {
+    console.log(cards);
     section.renderItems(cards);
   })
   .catch((err) => console.log("Error fetching cards:", err));
