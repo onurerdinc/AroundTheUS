@@ -116,6 +116,7 @@ const section = new Section(
 api
   .getInitialCards()
   .then((cards) => {
+    console.log(cards);
     section.renderItems(cards);
   })
   .catch((err) => console.log("Error fetching cards:", err));
