@@ -85,8 +85,8 @@ editProfilePopup.setEventListeners();
 const newCardPopup = new PopupWithForm("#add-card-modal", (newCardData) => {
   const submitButton = addCardForm.querySelector(".modal__save");
   const initialButtonText = submitButton.textContent;
-
   submitButton.textContent = "Saving...";
+
   api
     .addNewCard({ name: newCardData.title, link: newCardData.url })
     .then((cardData) => {
@@ -116,7 +116,6 @@ const section = new Section(
 api
   .getInitialCards()
   .then((cards) => {
-    console.log(cards);
     section.renderItems(cards);
   })
   .catch((err) => console.log("Error fetching cards:", err));
@@ -169,3 +168,17 @@ const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();
 const profileEditFormValidator = new FormValidator(config, profileEditForm);
 profileEditFormValidator.enableValidation();
+
+/* -------------------------------------------------------------------------- */
+/*                           Fetch and Render Data                           */
+/* -------------------------------------------------------------------------- */
+
+Promise.all([api.getUserData(), api.getInitialCards()])
+  .then(([profileData, cards]) => {
+    user.setUserInfo(profileData.name, profileData.about);
+    user.changeAvatar(profileData.avatar);
+    section.renderItems(cards);
+  })
+  .catch((err) => {
+    console.error("Error fetching data:", err);
+  });
