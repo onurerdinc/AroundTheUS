@@ -21,6 +21,11 @@
             alt="avatar image"
             class="profile__image"
           />
+          <button
+            class="profile__avatar-edit-button"
+            type="button"
+            id="avatar-edit-button"
+          ></button>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button
@@ -148,12 +153,38 @@
       </div>
     </div>
 
+    <!-- update profile photo modal -->
+    <div class="modal" id="profile-avatar-modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <form class="modal__form" id="modal__form_avatar">
+          <h1 class="modal__heading" id="modal-heading-avatar">
+            Change profile picture
+          </h1>
+          <input
+            type="url"
+            id="modal-profile-link"
+            name="link"
+            class="modal__input modal__profile_link"
+            placeholder="Image link"
+            class="modal__input"
+            required
+          />
+          <span class="modal__error" id="modal-profile-link-error"></span>
+          <button class="modal__button" id="modal-profile-submit" type="submit">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
     <!-- Delete Confirmation Modal -->
     <div class="modal" id="delete-card-modal">
       <div class="modal__container" id="modal-delete-card-container">
-        <button class="modal__close" type="button"></button>
-        <h3 class="modal__description" id="card-delete-title">Are you sure?</h3>
         <form class="modal__form" id="delete-card-form">
+          <h3 class="modal__description" id="card-delete-title">
+            Are you sure?
+          </h3>
           <button
             type="submit"
             class="modal__button modal__button-confirm"

@@ -127,7 +127,12 @@ api
 
 // Render card function
 function renderCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleImageClick);
+  const card = new Card(
+    cardData,
+    "#card-template",
+    handleImageClick,
+    handleDelete
+  );
   const cardElement = card.getView();
   section.addItem(cardElement);
 }
@@ -135,6 +140,20 @@ function renderCard(cardData) {
 // Handle image click
 function handleImageClick(card) {
   previewImagePopup.open(card.name, card.link);
+}
+
+// Handle card delete
+function handleDelete(card) {
+  confirmation.open();
+  confirmation.setConfirmSubmit(() => {
+    api
+      .deleteCard(card.id)
+      .then(() => {
+        confirmation.close();
+        card._handleDeleteCard();
+      })
+      .catch((err) => console.log(err));
+  });
 }
 
 /* -------------------------------------------------------------------------- */
