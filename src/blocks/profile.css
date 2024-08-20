@@ -13,6 +13,7 @@
   border-radius: 50%;
   object-position: center;
   object-fit: cover;
+  position: relative;
 }
 
 .profile__info {
@@ -76,6 +77,22 @@
 .profile__add-button:hover {
   opacity: 60%;
   cursor: pointer;
+}
+
+.profile__avatar-edit-button {
+  background: transparent url(../images/pencil.svg) center no-repeat;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 50%;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.profile__avatar-edit-button:hover .profile__image {
+  cursor: pointer;
+  visibility: visible;
 }
 
 @media screen and (max-width: 320px) {

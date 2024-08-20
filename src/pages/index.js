@@ -34,6 +34,12 @@ const profileDescriptionInput = profileEditModal.querySelector(
   "#profile-description-input"
 );
 
+// Edit Avatar
+const avatarEditBtn = document.querySelector("#avatar-edit-button");
+const avatarForm = document.forms["modal__form_avatar"]; // Correct form name
+
+const profileImage = document.querySelector(".profile__image"); // Corrected selector
+
 // Add New Card
 const addCardForm = document.forms["card-form"];
 const addCardBtn = document.querySelector(".profile__add-button");
@@ -116,10 +122,33 @@ const section = new Section(
 api
   .getInitialCards()
   .then((cards) => {
-    console.log(cards);
     section.renderItems(cards);
   })
   .catch((err) => console.log("Error fetching cards:", err));
+
+// Edit Avatar Popup
+const avatarEditPopup = new PopupWithForm(
+  "#profile-avatar-modal",
+  (formData) => {
+    const submitButton = avatarEditPopup._popupElement.querySelector(
+      "#modal-profile-submit"
+    );
+    const initialButtonText = submitButton.textContent;
+    submitButton.textContent = "Saving...";
+
+    api
+      .updateAvatar(formData.link)
+      .then((res) => {
+        user.changeAvatar(res.avatar);
+        avatarEditPopup.close();
+      })
+      .catch((err) => console.log("Error updating avatar:", err))
+      .finally(() => {
+        submitButton.textContent = initialButtonText;
+      });
+  }
+);
+avatarEditPopup.setEventListeners();
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -181,6 +210,11 @@ const confirmation = new PopupDelete({
 });
 confirmation.setEventListeners();
 
+// Avatar Edit Form
+profileImage.addEventListener("click", () => {
+  avatarEditPopup.open();
+});
+
 /* -------------------------------------------------------------------------- */
 /*                               Validation                                    */
 /* -------------------------------------------------------------------------- */
@@ -188,6 +222,9 @@ const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();
 const profileEditFormValidator = new FormValidator(config, profileEditForm);
 profileEditFormValidator.enableValidation();
+
+const avatarFormValidator = new FormValidator(config, avatarForm);
+avatarFormValidator.enableValidation();
 
 /* -------------------------------------------------------------------------- */
 /*                           Fetch and Render Data                           */
