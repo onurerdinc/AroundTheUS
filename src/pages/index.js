@@ -176,7 +176,7 @@ function handleDelete(card) {
   confirmation.open();
   confirmation.setConfirmSubmit(() => {
     api
-      .deleteCard(card.id)
+      .deleteCard(card._id)
       .then(() => {
         confirmation.close();
         card._handleDeleteCard();
@@ -239,12 +239,3 @@ Promise.all([api.getUserData(), api.getInitialCards()])
   .catch((err) => {
     console.error("Error fetching data:", err);
   });
-
-/* Questions
-
-1) Confirmation modal does not work properly - when click "yes", it does not delete the card. 
-2) Initial cards are random cards that I added, not the inital cards from prevous sprint. Did not use the initialCards variable from the constant.js file
-3) profile photo hover pencil icon does not work. 
-4) Avatar modal does not update the avatar photo
-
-*/
