@@ -36,9 +36,9 @@ const profileDescriptionInput = profileEditModal.querySelector(
 
 // Edit Avatar
 const avatarEditBtn = document.querySelector("#avatar-edit-button");
-const avatarForm = document.forms["modal__form_avatar"]; // Correct form name
+const avatarForm = document.forms["modal__form_avatar"];
 
-const profileImage = document.querySelector(".profile__image"); // Corrected selector
+const profileImage = document.querySelector(".profile__image");
 
 // Add New Card
 const addCardForm = document.forms["card-form"];
@@ -239,3 +239,12 @@ Promise.all([api.getUserData(), api.getInitialCards()])
   .catch((err) => {
     console.error("Error fetching data:", err);
   });
+
+/* Questions
+
+1) Confirmation modal does not work properly - when click "yes", it does not delete the card. 
+2) Initial cards are random cards that I added, not the inital cards from prevous sprint. Did not use the initialCards variable from the constant.js file
+3) profile photo hover pencil icon does not work. 
+4) Avatar modal does not update the avatar photo
+
+*/
