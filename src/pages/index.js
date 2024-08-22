@@ -190,14 +190,14 @@ function handleDelete(card) {
 function handleLikeCard(card) {
   if (card._isLiked) {
     api
-      ._handleLikeIcon(card._id)
+      .removeLike(card._id)
       .then((res) => {
         card._handleLikeIcon(res.isLiked);
       })
       .catch((err) => console.log(err));
   } else {
     api
-      ._handleDeleteCard(card._id)
+      .addLike(card._id)
       .then((res) => {
         card._handleLikeIcon(res.isLiked);
       })
