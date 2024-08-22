@@ -7,7 +7,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import PopupDelete from "../components/PopupDelete.js";
-import Api from "../components/api.js";
+import Api from "../components/Api.js";
 
 /* -------------------------------------------------- API ---------------------------------------------- */
 
