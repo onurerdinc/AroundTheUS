@@ -160,7 +160,8 @@ function renderCard(cardData) {
     cardData,
     "#card-template",
     handleImageClick,
-    handleDelete
+    handleDelete,
+    handleLikeCard
   );
   const cardElement = card.getView();
   section.addItem(cardElement);
@@ -183,6 +184,25 @@ function handleDelete(card) {
       })
       .catch((err) => console.log(err));
   });
+}
+
+// Handle Like click
+function handleLikeCard(card) {
+  if (card._isLiked) {
+    api
+      ._handleLikeIcon(card._id)
+      .then((res) => {
+        card._handleLikeIcon(res.isLiked);
+      })
+      .catch((err) => console.log(err));
+  } else {
+    api
+      ._handleDeleteCard(card._id)
+      .then((res) => {
+        card._handleLikeIcon(res.isLiked);
+      })
+      .catch((err) => console.log(err));
+  }
 }
 
 /* -------------------------------------------------------------------------- */
