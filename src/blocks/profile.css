@@ -80,7 +80,7 @@
 }
 
 .profile__avatar-edit-button {
-  background: transparent url(../images/pencil.svg) center no-repeat;
+  background: transparent center no-repeat;
   position: absolute;
   width: 120px;
   height: 120px;
@@ -90,6 +90,7 @@
 }
 
 .profile__avatar-edit-button:hover {
+  background: transparent url(../images/pencil.svg) center no-repeat;
   cursor: pointer;
   visibility: visible;
   opacity: 0.8;

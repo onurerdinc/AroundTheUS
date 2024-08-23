@@ -172,6 +172,7 @@
   height: 181px;
   margin: 270px 425px 269px 425px;
   padding: 0;
+  background-color: white;
 }
 
 #modal-delete-card-container {
@@ -185,6 +186,7 @@
   height: 23px;
   margin: 0;
   padding: 34px 36px;
+  padding-left: 0;
 }
 
 #modal-yes-button {
