@@ -192,14 +192,14 @@ function handleLikeCard(card) {
     api
       .removeLike(card._id)
       .then((res) => {
-        card._handleLikeIcon(res.isLiked);
+        card.updateIsLiked(res.isLiked);
       })
       .catch((err) => console.log(err));
   } else {
     api
       .addLike(card._id)
       .then((res) => {
-        card._handleLikeIcon(res.isLiked);
+        card.updateIsLiked(res.isLiked);
       })
       .catch((err) => console.log(err));
   }
@@ -262,6 +262,5 @@ Promise.all([api.getUserData(), api.getInitialCards()])
 
 // Questions
 
-// 1) Like button dissapears when reload the page
+// 1) Like  dissapears when reload the page
 // 2) No initial cards are showing - Reviewer said no initial cards are showing when the page first loads.
-// 3) The image modal is undefined
