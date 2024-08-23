@@ -89,9 +89,10 @@
   z-index: 1;
 }
 
-.profile__avatar-edit-button:hover .profile__image {
+.profile__avatar-edit-button:hover {
   cursor: pointer;
   visibility: visible;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 320px) {

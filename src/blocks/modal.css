@@ -167,18 +167,33 @@
   color: #000;
 }
 
-.delete-card-modal {
+#delete-card-modal {
   width: 430px;
   height: 181px;
+  margin: 270px 425px 269px 425px;
+  padding: 0;
 }
 
-.card-delete-title {
-  color: #000;
+#modal-delete-card-container {
+  margin: 0;
+  padding: 0;
+  background-color: white;
 }
 
-.modal__button-confirm {
+#card-delete-title {
+  width: 358px;
+  height: 23px;
+  margin: 0;
+  padding: 34px 36px;
+}
+
+#modal-yes-button {
+  width: 358px;
+  height: 50px;
   color: white;
   background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 820px) {

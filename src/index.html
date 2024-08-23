@@ -100,27 +100,24 @@
               type="text"
               name="title"
               class="modal__input modal__input_type_title"
-              id="profile-title-input"
+              id="card-title-input"
               placeholder="Title"
               minlength="1"
               maxlength="30"
               required
             />
-            <span class="modal__error" id="profile-title-input-error"
+            <span class="modal__error" id="card-title-input-error"
               >Please fill out this field.</span
             >
             <input
               type="url"
               name="url"
               class="modal__input modal__input_type_url"
-              id="profile-description-input"
+              id="card-description-input"
               placeholder="Image link"
               required
             />
-            <span
-              class="modal__error"
-              id="profile-description-input-error"
-            ></span>
+            <span class="modal__error" id="card-description-input-error"></span>
             <button
               type="submit"
               class="modal__save modal__button modal__button_disabled"
@@ -168,7 +165,6 @@
             name="link"
             class="modal__input modal__profile_link"
             placeholder="Image link"
-            class="modal__input"
             required
           />
           <span class="modal__error" id="modal-profile-link-error"></span>
@@ -182,6 +178,11 @@
     <!-- Delete Confirmation Modal -->
     <div class="modal" id="delete-card-modal">
       <div class="modal__container" id="modal-delete-card-container">
+        <button
+          type="button"
+          class="modal__close"
+          id="modal-close-button"
+        ></button>
         <form class="modal__form" id="delete-card-form">
           <h3 class="modal__description" id="card-delete-title">
             Are you sure?
