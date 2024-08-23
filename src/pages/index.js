@@ -169,7 +169,7 @@ function renderCard(cardData) {
 
 // Handle image click
 function handleImageClick(card) {
-  previewImagePopup.open(card.name, card.link);
+  previewImagePopup.open({ name: card.name, link: card.link });
 }
 
 // Handle card delete
