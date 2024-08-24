@@ -130,7 +130,7 @@ api
 const avatarEditPopup = new PopupWithForm(
   "#profile-avatar-modal",
   (formData) => {
-    const submitButton = avatarEditPopup._popupElement.querySelector(
+    const submitButton = avatarEditPopup.popupElement.querySelector(
       "#modal-profile-submit"
     );
     const initialButtonText = submitButton.textContent;
@@ -180,7 +180,7 @@ function handleDelete(card) {
       .deleteCard(card._id)
       .then(() => {
         confirmation.close();
-        card._handleDeleteCard();
+        card.handleDeleteCard();
       })
       .catch((err) => console.log(err));
   });
