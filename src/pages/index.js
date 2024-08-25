@@ -51,16 +51,6 @@ const user = new UserInfo(
   ".profile__image"
 );
 
-api
-  .getUserData()
-  .then((profileData) => {
-    if (profileData) {
-      user.setUserInfo(profileData.name, profileData.about);
-      user.changeAvatar(profileData.avatar);
-    }
-  })
-  .catch((err) => console.log("Error loading user info:", err));
-
 /* -------------------------------------------------------------------------- */
 /*                                  Popups                                    */
 /* -------------------------------------------------------------------------- */
@@ -127,6 +117,7 @@ const avatarEditPopup = new PopupWithForm(
   "#profile-avatar-modal",
   (formData) => {
     avatarEditPopup.renderLoading(true);
+    avatarFormValidator.toggleButtonState();
 
     api
       .updateAvatar(formData.link)
@@ -174,7 +165,7 @@ function handleDelete(card) {
         confirmation.close();
         card.handleDeleteCard();
       })
-      .catch((err) => console.log(err));
+      .catch(console.error);
   });
 }
 
@@ -193,7 +184,7 @@ function handleLikeCard(card) {
       .then((res) => {
         card.updateIsLiked(res.isLiked);
       })
-      .catch((err) => console.log(err));
+      .catch(console.error);
   }
 }
 
