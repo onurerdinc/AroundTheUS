@@ -139,8 +139,6 @@
   margin: 40px;
 }
 
-/* Modifier for the modal container to make it fit the image preview */
-
 .modal__container_image-preview {
   margin-bottom: 20px;
   display: flex;
@@ -159,6 +157,13 @@
 .modal__close_image-preview {
   bottom: calc(100% + 30px);
   left: calc(100% - 30px);
+}
+
+#modal-profile-submit {
+  background-color: black;
+  color: white;
+  width: 358px;
+  height: 50px;
 }
 
 .modal__save-button_disabled {
