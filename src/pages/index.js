@@ -69,9 +69,7 @@ api
 const editProfilePopup = new PopupWithForm(
   "#profile-edit-modal",
   (profileData) => {
-    const submitButton = profileEditForm.querySelector(".modal__save");
-    const initialButtonText = submitButton.textContent;
-    submitButton.textContent = "Saving...";
+    editProfilePopup.renderLoading(true);
 
     api
       .editProfile(profileData.title, profileData.subheader)
@@ -81,7 +79,7 @@ const editProfilePopup = new PopupWithForm(
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        submitButton.textContent = initialButtonText;
+        editProfilePopup.renderLoading(false);
       });
   }
 );
@@ -89,9 +87,7 @@ editProfilePopup.setEventListeners();
 
 // Add New Card Popup
 const newCardPopup = new PopupWithForm("#add-card-modal", (newCardData) => {
-  const submitButton = addCardForm.querySelector(".modal__save");
-  const initialButtonText = submitButton.textContent;
-  submitButton.textContent = "Saving...";
+  newCardPopup.renderLoading(true);
 
   api
     .addNewCard({ name: newCardData.title, link: newCardData.url })
@@ -101,7 +97,7 @@ const newCardPopup = new PopupWithForm("#add-card-modal", (newCardData) => {
     })
     .catch((err) => console.log(err))
     .finally(() => {
-      submitButton.textContent = initialButtonText;
+      newCardPopup.renderLoading(false);
     });
 });
 newCardPopup.setEventListeners();
@@ -130,11 +126,7 @@ api
 const avatarEditPopup = new PopupWithForm(
   "#profile-avatar-modal",
   (formData) => {
-    const submitButton = avatarEditPopup.popupElement.querySelector(
-      "#modal-profile-submit"
-    );
-    const initialButtonText = submitButton.textContent;
-    submitButton.textContent = "Saving...";
+    avatarEditPopup.renderLoading(true);
 
     api
       .updateAvatar(formData.link)
@@ -144,7 +136,7 @@ const avatarEditPopup = new PopupWithForm(
       })
       .catch((err) => console.log("Error updating avatar:", err))
       .finally(() => {
-        submitButton.textContent = initialButtonText;
+        avatarEditPopup.renderLoading(false);
       });
   }
 );
