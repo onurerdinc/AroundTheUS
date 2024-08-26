@@ -242,8 +242,3 @@ Promise.all([api.getUserData(), api.getInitialCards()])
   .catch((err) => {
     console.error("Error fetching data:", err);
   });
-
-// Questions
-
-// 1) Like  dissapears when reload the page
-// 2) No initial cards are showing - Reviewer said no initial cards are showing when the page first loads.
