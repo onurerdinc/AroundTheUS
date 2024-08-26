@@ -105,13 +105,6 @@ const section = new Section(
   ".cards__list"
 );
 
-api
-  .getInitialCards()
-  .then((cards) => {
-    section.renderItems(cards);
-  })
-  .catch((err) => console.log("Error fetching cards:", err));
-
 // Edit Avatar Popup
 const avatarEditPopup = new PopupWithForm(
   "#profile-avatar-modal",
