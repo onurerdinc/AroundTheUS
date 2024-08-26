@@ -216,6 +216,8 @@ confirmation.setEventListeners();
 // Avatar Edit Form
 avatarEditBtn.addEventListener("click", () => {
   avatarEditPopup.open();
+  avatarFormValidator.toggleButtonState();
+  avatarFormValidator.resetValidation();
 });
 
 /* -------------------------------------------------------------------------- */
