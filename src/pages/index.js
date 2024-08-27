@@ -110,7 +110,6 @@ const avatarEditPopup = new PopupWithForm(
   "#profile-avatar-modal",
   (formData) => {
     avatarEditPopup.renderLoading(true);
-    avatarFormValidator.toggleButtonState();
 
     api
       .updateAvatar(formData.link)
