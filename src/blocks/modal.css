@@ -229,6 +229,10 @@
     bottom: calc(100% + 20px);
     left: 90%;
   }
+  #modal-profile-submit {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -262,5 +266,10 @@
 
   .modal__close {
     bottom: calc(100% + 30px);
+  }
+
+  #modal-profile-submit {
+    max-width: 100%;
+    width: 100%;
   }
 }
