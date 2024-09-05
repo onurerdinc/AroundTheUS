@@ -16,6 +16,14 @@ export default class PopupWithForm extends Popup {
     return inputValues;
   }
 
+  renderLoading(isLoading, loadingText = "Saving...") {
+    if (isLoading) {
+      this._formButton.textContent = loadingText;
+    } else {
+      this._formButton.textContent = this._formButtonText;
+    }
+  }
+
   setInputValues(data) {
     this._inputList.forEach((input) => {
       input.value = data[input.name];
@@ -30,6 +38,10 @@ export default class PopupWithForm extends Popup {
   _handleSubmit = (evt) => {
     evt.preventDefault();
     this._handleFormSubmit(this._getInputValues());
-    this._popupForm.reset();
   };
+
+  close() {
+    super.close();
+    this._popupForm.reset();
+  }
 }
