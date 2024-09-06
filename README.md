@@ -1,4 +1,4 @@
-# Project 3: Around The U.S.
+# Project 3: Around The World
 
 **Intro**
 
@@ -9,10 +9,9 @@ This project is made so all the elements are displayed correctly on popular scre
 
 This project focuses on creating a user-friendly social media page where users can customize their profile, upload photos, delete them, and like posts.
 
-The "Around The US" website was built using HTML, CSS, and JavaScript, with an emphasis on Object-Oriented Programming (OOP) and code reusability. The site includes four different forms: one for adding new cards, another for editing the user's profile, one for changing the avatar, and a form to confirm deletions—all of which are integrated with an API server. Users can personalize the page by adding cards about places, hobbies, or anything else they wish, and they can also modify their profile name and bio. Additionally, users have the option to like the cards they post. The site is fully responsive, ensuring a great experience on any device.
+The "Around The World" website was built using HTML, CSS, and JavaScript, with an emphasis on Object-Oriented Programming (OOP) and code reusability. The site includes four different forms: one for adding new cards, another for editing the user's profile, one for changing the avatar, and a form to confirm deletions—all of which are integrated with an API server. Users can personalize the page by adding cards about places, hobbies, or anything else they wish, and they can also modify their profile name and bio. Additionally, users have the option to like the cards they post. The site is fully responsive, ensuring a great experience on any device.
 
-**Figma**
 
-- [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
+- [Figma Design](https://www.figma.com/design/E5x6ib3osaUUNwLRRAsTDX/Sprint-9-%E2%80%94-Applied-JavaScript)
 
-- [Website Link](https://onurerdinc.github.io/se_project_aroundtheus/)
+- [Website Link](https://onurerdinc.github.io/se_project_aroundtheworld/)
