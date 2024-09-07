@@ -1,4 +1,4 @@
-# Project 3: Around The World
+# Project 3: Around The US
 
 **Technologies & Tools**
 
