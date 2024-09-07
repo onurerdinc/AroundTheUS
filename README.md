@@ -26,4 +26,4 @@ The "Around The World" website was built using HTML, CSS, and JavaScript, with a
 
 - [Figma Design](https://www.figma.com/design/E5x6ib3osaUUNwLRRAsTDX/Sprint-9-%E2%80%94-Applied-JavaScript)
 
-- [Website Link](https://onurerdinc.github.io/AroundTheWorld/)
+- [Website Link](https://onurerdinc.github.io/AroundTheUS/)
